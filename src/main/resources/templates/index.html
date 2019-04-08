@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="include :: header"></head>
+<body class="w3-content">
+<div class="w3-container w3-light-gray">
+    <h4>My Timetable</h4>
+</div>
+<div class="w3-container w3-bar w3-dark-gray">
+    <a href="/" class="w3-bar-item w3-button" >Home</a>
+    <a href="/timetable" class="w3-bar-item w3-button" >My Timetable</a>
+    <a href="/course/add" class="w3-bar-item w3-button">Add Course</a>
+    <a href="#" class="w3-bar-item w3-button">Add Event</a>
+    <a href="/manage" class="w3-bar-item w3-button">Manage Timetable</a>
+</div>
+
+<div class="w3-container w3-border-bottom" style="margin-top: 5%">
+    <div class="w3-round-small w3-dark-gray"> Next Course</div>
+    <ul class="w3-ul">
+        <li><span class="w3-badge">1</span> Course Name: </li>
+        <li><span class="w3-badge">2</span> Date: </li>
+        <li><span class="w3-badge">3</span> Time: </li>
+        <li><span class="w3-badge">4</span> Allocation: </li>
+    </ul>
+
+</div>
+
+<div class="w3-container w3-border-bottom" style="margin-top: 5%">
+    <div class="w3-round-small w3-dark-gray"> Next Event</div>
+    <ul class="w3-ul">
+        <li><span class="w3-badge">1</span> Event: </li>
+        <li><span class="w3-badge">2</span> Detail: </li>
+        <li><span class="w3-badge">3</span> Date: </li>
+        <li><span class="w3-badge">4</span> Time: </li>
+
+    </ul>
+
+</div>
+
+<div th:include="include :: footer"></div>
+</body>
+</html>

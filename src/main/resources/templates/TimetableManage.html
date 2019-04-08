@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="include :: header"></head>
+<body class="w3-content">
+
+<div class="w3-container w3-light-gray">
+    <h4>My Timetable</h4>
+</div>
+
+<div class="w3-container w3-bar w3-dark-gray">
+    <a href="#" class="w3-bar-item w3-button" >Home</a>
+    <a href="#" class="w3-bar-item w3-button" >My Timetable</a>
+    <a href="#" class="w3-bar-item w3-button">Add Course</a>
+    <a href="#" class="w3-bar-item w3-button">Add Event</a>
+</div>
+
+<div class="w3-container w3-center" style="font-size:large">
+    <div class="w3-container w3-center" style="padding-top: 10%;padding-bottom: 5%"><p3>Timetable Management</p3></div>
+    <table class="w3-table" >
+        <tr>
+            <td >Course1</td>
+            <td><button class="w3-btn">Modify</button></td>
+            <td><button class="w3-btn">Delete</button></td>
+        </tr>
+        <tr>
+            <td>Event1</td>
+            <td><button class="w3-btn">Modify</button></td>
+            <td><button class="w3-btn">Delete</button></td>
+        </tr>
+        <tr style="height: 5%">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div class="w3-bar w3-center" id="page">
+        <a href="#" class="w3-button w3-hover-orange">«</a>
+        <a href="#" class="w3-button w3-hover-orange">1</a>
+        <a href="#" class="w3-button w3-hover-orange">»</a>
+    </div>
+</div>
+<div th:include="include :: footer"></div>
+
+</body>
+</html>

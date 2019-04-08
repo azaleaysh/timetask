@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="include :: header"></head>
+<body class="w3-content">
+
+<div class="w3-container w3-light-gray">
+    <h4>My Timetable</h4>
+</div>
+
+<div class="w3-container w3-bar w3-dark-gray">
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">My Timetable</a>
+    <a href="#" class="w3-bar-item w3-button">Add Event</a>
+    <a href="#" class="w3-bar-item w3-button">Manage Timetable</a>
+</div>
+
+<div class="w3-container">
+    <div class="w3-container w3-center" style="padding-bottom: 5%;padding-top: 10%">
+        <h3>Add Course</h3>
+    </div>
+    <form id="course-form" class="w3-container" style="padding-left: 25%;padding-right: 25%">
+        <p>
+            <label>Course Name</label>
+            <input id="courseName" class="w3-input w3-border w3-hover-grey" type="text">
+        </p>
+
+        <p>
+            <label>Location</label>
+            <input id="location" class="w3-input w3-border w3-hover-grey" type="text">
+        </p>
+
+        <p>
+            <label>Day of week</label>
+            <select id="dayOfWeek" class="w3-select w3-border" name="option">
+                <option value="1">Monday</option>
+                <option value="2">Tuesday</option>
+                <option value="3">Wednesday</option>
+                <option value="4">Thursday</option>
+                <option value="5">Friday</option>
+            </select>
+        </p>
+
+        <p>
+            <label>Start Time(HH:MM)</label>
+            <input id="startTime" class="w3-input w3-border w3-hover-grey" type="text">
+        </p>
+
+        <p>
+            <label>Finish Time(HH:MM)</label>
+            <input id="endTime" class="w3-input w3-border w3-hover-grey" type="text">
+        </p>
+
+        <p>
+            <label>Times</label>
+            <select id="times" class="w3-select w3-border" name="option">
+                <option value="0">Every Week</option>
+                <option value="1">Only Once</option>
+            </select>
+        </p>
+
+    </form>
+    <p style="padding-left: 45%">
+        <button class="w3-button w3-black w3-round-large" onclick="save()">Submit</button>
+    </p>
+</div>
+<div th:include="include :: footer"></div>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    function save() {
+        var courseName = $("#courseName").val();
+        var location = $("#location").val();
+        var dayOfWeek = $("#dayOfWeek").val();
+        var startTime = $("#startTime").val();
+        var endTime = $("#endTime").val();
+        var times = $("#times").val();
+        $.post("/course/add", {
+            courseName: courseName,
+            location: location,
+            dayOfWeek: dayOfWeek,
+            startTime: startTime,
+            endTime: endTime,
+            times: times
+        }, function (res) {
+            alert(res.msg);
+        })
+    }
+</script>
+</body>
+</html>

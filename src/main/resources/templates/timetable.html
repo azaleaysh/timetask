@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head th:include="include :: header"></head>
+<body class="w3-content">
+
+<div class="w3-container w3-light-gray">
+    <h4>My Timetable</h4>
+</div>
+<div class="w3-container w3-bar w3-dark-gray">
+    <a href="/" class="w3-bar-item w3-button" >Home</a>
+    <a href="/timetable" class="w3-bar-item w3-button" >My Timetable</a>
+    <a href="/course/add" class="w3-bar-item w3-button">Add Course</a>
+    <a href="#" class="w3-bar-item w3-button">Add Event</a>
+</div>
+
+<div class="w3-container w3-center" style="margin-top: 5%">
+    <h3><strong>My Timetable</strong></h3>
+</div>
+<div class="w3-container">
+    <h4>Date: StartDate-EndDate</h4>
+</div>
+
+<div class="w3-container" style="margin-top: 2%">
+    <table class="w3-table w3-border">
+        <tr class="w3-border-bottom">
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr class="w3-border-bottom">
+            <td>8:00</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+        </tr>
+        <tr class="w3-border-bottom">
+            <td>9:00</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+        </tr>
+        <tr class="w3-border-bottom">
+            <td>10:00</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+        </tr>
+        <tr class="w3-border-bottom">
+            <td>11:00</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+        </tr>
+        <tr class="w3-border-bottom">
+            <td>12:00</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+        </tr>
+        <tr class="w3-border-bottom">
+            <td>13:00</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+        </tr>
+        <tr class="w3-border-bottom">
+            <td>14:00</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+        </tr>
+        <tr class="w3-border-bottom">
+            <td>15:00</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+        </tr>
+        <tr class="w3-border-bottom">
+            <td>16:00</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+        </tr>
+        <tr class="w3-border-bottom">
+            <td>17:00</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+        </tr>
+        <tr class="w3-border-bottom">
+            <td>18:00</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
+        </tr>
+    </table>
+</div>
+
+<div class="w3-container" style="margin-top: 2%;margin-bottom: 5%">
+    <a href="#" class="w3-button">&#10094; <strong>Previous</strong></a>
+    <a href="#" class="w3-button w3-right"><strong>Next</strong> &#10095;</a>
+</div>
+
+<div th:include="include :: footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="include :: header"></head>
+<body class="w3-content">
+
+<div class="w3-container w3-light-gray">
+    <h4>My Timetable</h4>
+</div>
+
+<div class="w3-container w3-bar w3-dark-gray">
+    <a href="#" class="w3-bar-item w3-button" >Home</a>
+    <a href="#" class="w3-bar-item w3-button" >My Timetable</a>
+    <a href="#" class="w3-bar-item w3-button">Add Course</a>
+    <a href="#" class="w3-bar-item w3-button">Manage Timetable</a>
+</div>
+
+<div class="w3-container" style="padding-top: 5%">
+
+<h3 class="w3-center">Add Event</h3>
+
+<form class="w3-container" style="padding-left: 25%;padding-right: 25%">
+    <p>
+        <label>Event</label>
+        <input class="w3-input w3-border w3-hover-grey" type="text">
+    </p>
+
+    <p>
+        <label>Date (YYYY/MM/DD)</label>
+        <input class="w3-input w3-border w3-hover-grey" type="text">
+    </p>
+
+    <p>
+        <label>Time(HH:MM)</label>
+        <input class="w3-input w3-border w3-hover-grey" type="text">
+    </p>
+
+    <p>
+        <label>Details</label>
+        <input class="w3-input w3-border w3-hover-grey" type="text">
+    </p>
+
+</form>
+
+<p style="padding-left: 45%"><button class="w3-button w3-black w3-round-large">Submit</button></p>
+</div>
+<div th:include="include :: footer"></div>
+</body>
+</html>

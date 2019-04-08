@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="uk.ac.shef.timetask.mapper.TimeTaskCourseMapper">
+
+    <resultMap type="uk.ac.shef.timetask.entity.TimeTaskCourse" id="TimeTaskCourseMap">
+        <result property="courseId" column="course_id"/>
+        <result property="courseName" column="course_name"/>
+        <result property="location" column="location"/>
+        <result property="dayOfWeek" column="day_of_week"/>
+        <result property="startTime" column="start_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="times" column="times"/>
+    </resultMap>
+
+    <select id="queryById" resultMap="TimeTaskCourseMap">
+        select
+          course_id, course_name, location, day_of_week, start_time, end_time, times
+        from time_task_course
+        where course_id = #{courseId}
+    </select>
+
+    <select id="queryAllByLimit" resultMap="TimeTaskCourseMap">
+        select
+          course_id, course_name, location, day_of_week, start_time, end_time, times
+        from time_task_course
+        limit #{offset}, #{limit}
+    </select>
+
+    <select id="queryAll" resultMap="TimeTaskCourseMap">
+        select
+          course_id, course_name, location, day_of_week, start_time, end_time, times
+        from time_task_course
+        <where>
+            <if test="courseId != null">
+                and course_id = #{courseId}
+            </if>
+            <if test="courseName != null and courseName != ''">
+                and course_name = #{courseName}
+            </if>
+            <if test="location != null and location != ''">
+                and location = #{location}
+            </if>
+            <if test="dayOfWeek != null">
+                and day_of_week = #{dayOfWeek}
+            </if>
+            <if test="startTime != null">
+                and start_time = #{startTime}
+            </if>
+            <if test="endTime != null">
+                and end_time = #{endTime}
+            </if>
+            <if test="times != null">
+                and times = #{times}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insert" keyProperty="courseId" useGeneratedKeys="true">
+        insert into time_task_course
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="courseName != null">course_name,</if>
+            <if test="location != null">location,</if>
+            <if test="dayOfWeek != null">day_of_week,</if>
+            <if test="startTime != null">start_time,</if>
+            <if test="endTime != null">end_time,</if>
+            <if test="times != null">times,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="courseName != null">#{courseName},</if>
+            <if test="location != null">#{location},</if>
+            <if test="dayOfWeek != null">#{dayOfWeek},</if>
+            <if test="startTime != null">#{startTime},</if>
+            <if test="endTime != null">#{endTime},</if>
+            <if test="times != null">#{times},</if>
+        </trim>
+    </insert>
+
+    <update id="update">
+        update time_task_course
+        <set>
+            <if test="courseName != null and courseName != ''">
+                course_name = #{courseName},
+            </if>
+            <if test="location != null and location != ''">
+                location = #{location},
+            </if>
+            <if test="dayOfWeek != null">
+                day_of_week = #{dayOfWeek},
+            </if>
+            <if test="startTime != null">
+                start_time = #{startTime},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime},
+            </if>
+            <if test="times != null">
+                times = #{times},
+            </if>
+        </set>
+        where course_id = #{courseId}
+    </update>
+
+    <delete id="deleteById">
+        delete from time_task_course where course_id = #{courseId}
+    </delete>
+
+</mapper>
