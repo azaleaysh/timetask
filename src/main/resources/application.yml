@@ -4,6 +4,10 @@ spring:
     url: jdbc:mysql://localhost:3306/paas
     username: root
     password: woshizm
+  thymeleaf:
+    cache: false
+  jmx:
+    enabled: false
 
 mybatis:
   typeAliasesPackage: uk.ac.shef.timetask.mapper
